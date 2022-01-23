@@ -32,9 +32,10 @@ public interface NeighbourApiService {
      */
     void createNeighbour(Neighbour neighbour);
 
-    void addFavorisNeighbour(int idNeighbour);
+    void addFavorisNeighbour(long idNeighbour);
 
     ArrayList<Neighbour> getFavorisNeighbour();
+
 
 
 }

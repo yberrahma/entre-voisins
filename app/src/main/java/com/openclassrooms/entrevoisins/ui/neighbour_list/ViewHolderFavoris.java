@@ -17,7 +17,7 @@ public class ViewHolderFavoris extends RecyclerView.ViewHolder {
 
     public ViewHolderFavoris(@NonNull View itemView) {
         super(itemView);
-textView = itemView.findViewById(R.id.fragment_main_item_title);
+//textView = itemView.findViewById(R.id.fragment_main_item_title);
 
     }
 

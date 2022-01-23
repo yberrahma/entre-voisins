@@ -11,6 +11,7 @@ import org.junit.runners.JUnit4;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
@@ -38,6 +39,46 @@ public class NeighbourServiceTest {
     public void deleteNeighbourWithSuccess() {
         Neighbour neighbourToDelete = service.getNeighbours().get(0);
         service.deleteNeighbour(neighbourToDelete);
+
         assertFalse(service.getNeighbours().contains(neighbourToDelete));
     }
+
+    //ajout de favoris
+    //recuperation de favoris
+
+    @Test
+    public void deleteFromFavoris()
+    {
+        Neighbour delFavorisNeighnour = service.getNeighbours().get(0);
+
+        delFavorisNeighnour.setFavoris(false);
+
+        assertFalse(delFavorisNeighnour.isFavoris());
+        //assertEquals(false, delFavorisNeighnour.isFavoris());
+    }
+
+    @Test
+    public void addFavoris(){
+        Neighbour UserFavoris = service.getNeighbours().get(0);
+        UserFavoris.setFavoris(true);
+        assertEquals(true, UserFavoris.isFavoris());
+
+    }
+
+    @Test
+    public void getFavoris(){
+
+        Neighbour getUserFavoris = service.getNeighbours().get(0);
+
+
+        DummyNeighbourApiService neighbourApiService = new DummyNeighbourApiService();
+
+        getUserFavoris.setFavoris(true);
+
+       neighbourApiService.addFavorisNeighbour(getUserFavoris.getId());
+
+        assertEquals(true,getUserFavoris.isFavoris() );
+
+    }
+
 }

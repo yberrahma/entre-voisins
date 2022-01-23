@@ -53,7 +53,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
             @Override
             public void onClick(View view)
             {
-
+                EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
             }
         };
 

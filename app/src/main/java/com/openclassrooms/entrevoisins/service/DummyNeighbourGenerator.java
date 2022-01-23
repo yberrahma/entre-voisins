@@ -36,6 +36,8 @@ public abstract class DummyNeighbourGenerator {
     );
 
     static List<Neighbour> generateNeighbours() {
+     //   DUMMY_NEIGHBOURS.get(0).setFavoris(true);
+
         return new ArrayList<>(DUMMY_NEIGHBOURS);
     }
 }
